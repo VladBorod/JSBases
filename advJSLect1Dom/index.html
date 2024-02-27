@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/lectAdv1Dom/style.css">
+</head>
+
+<body>
+    <button class="btn">Buy</button>
+    <div class="content">
+
+    </div>
+    <img class="img" src="photo.jpg" alt="photo">
+    <script>
+        const buttonEl = document.querySelector('.btn');
+        const contentElement = document.querySelector('.content');
+        const imgEl = document.querySelector('.img');
+        imgEl.src = 'newphoto.jpg';
+        imgEl.onclick = () => imgEl.src = 'newphoto.jpg';
+
+        const textElement = document.createElement('p');
+        textElement.textContent = 'Hello World';
+
+
+        buttonEl.onclick = function() {
+            buttonEl.textContent = 'in backet';
+            contentElement.appendChild(textElement);
+        }
+    </script>
+    <h1 class="title">Lorem ipsum dolor sit amet.</h1>
+    <h2 id="heading">Lorem ipsum dolor sit amet.</h2>
+    <ul class="ul">
+        <li class="list">text 1</li>
+        <li class="list">text 2</li>
+        <li class="list">text 3</li>
+        <li class="list">text 4</li>
+    </ul>
+    <p class="text">Lorem ipsum dolor sit amet 1.</p>
+    <p class="text">Lorem ipsum dolor sit amet 2.</p>
+    <p class="text">Lorem ipsum dolor sit amet 3.</p>
+    <script>
+        const listElement = document.getElementsByClassName("list");
+        console.log(listElement);
+        const listElementQS = document.querySelectorAll('.list');
+        console.log(listElementQS);
+        const heading3 = document.querySelector('#heading');
+        console.log(heading3);
+        const heading = document.querySelector('.title');
+        const text = document.querySelectorAll('.text');
+        text.forEach(element => {
+
+        });
+        const titleEl = document.querySelector('.title');
+        titleEl.textContent = 'Some header from JS';
+        const heading2 = document.querySelector('#heading');
+        heading2.remove();
+    </script>
+</body>
+
+</html>
