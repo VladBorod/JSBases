@@ -7,7 +7,6 @@ const dropDownElements = document.querySelectorAll('div.dropdown div.menu a.drop
 dropDownElements.forEach(element => {
     element.setAttribute('class', element.classList + ' super-dropdown');
 });
-console.log(dropDownElements);
 
 // 2 --------------------------------->
 
