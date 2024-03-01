@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/advJSLect2Dom/style.css">
+    <!-- <style>
+        .heading {
+            color: white;
+            text-transform: uppercase;
+            background-color: #ccc;
+            text-align: center;
+        }
+    </style> -->
+</head>
+
+<body>
+    <div class="content">
+        <p>First</p>
+        <p>Second</p>
+        <p>Third</p>
+    </div>
+    <!-- <ul class="menu">
+        <li class="menu__list"><a href="#" class="menu__link">link-1</a></li>
+        <li class="menu__list"><a href="#" class="menu__link">link-2</a></li>
+        <li class="menu__list"><a href="#" class="menu__link">link-3</a></li>
+        <li class="menu__list"><a href="#" class="menu__link">link-4</a></li>
+    </ul> -->
+
+    <script>
+        const divElement = document.querySelector('.content');
+        // console.log(divElement.childNodes);
+        // console.log(divElement.children.length);
+        // Array.from(divElement.childNodes).forEach((childNodes) => {
+        //     console.log('childNodes "%s" type "%d"', childNodes.nodeName, childNodes.nodeType);
+        // });
+
+        [...divElement.children].forEach((child) => {
+            console.log('child "%s" type "%d"', child.nodeName, child.nodeType);
+        });
+
+
+        // const content = document.querySelector('.content');
+        // const h1El = document.createElement('h1');
+        // h1El.textContent = 'h1 element';
+        // h1El.setAttribute('class', 'heading');
+
+        // const imgEl = document.createElement('img');
+        // imgEl.src = 'photo.jpg';
+        // imgEl.setAttribute('alt', 'coolPhotos.');
+
+        // content.appendChild(h1El);
+        // content.appendChild(imgEl);
+        // ----------------------------------
+
+        // const liEl = document.querySelectorAll('.menu__list');
+        // const liElOne = document.querySelector('.menu__list');
+        // const linkEl = document.querySelector('.menu__link');
+        // const menuEl = document.querySelector('.menu');
+
+        // console.log(liEl);
+        // console.log(liElOne.parentNode.children);
+        // console.log(linkEl.children);
+        // console.log(linkEl.childNodes);
+        // console.log(menuEl.children);
+        // console.log(menuEl.childNodes);
+
+        // menuEl.childNodes.forEach(element => {
+        //     console.log(element);
+        // });
+    </script>
+</body>
+
+</html>
