@@ -67,13 +67,21 @@
         const selectFormControl = document.querySelector('select.form-control');
         const buttonFormControl = formToCheckElement.querySelector('button');
         buttonFormControl.addEventListener('click', function(e) {
-            if (inputFormControl.value !== "" && selectFormControl.value !== "") {
-                inputFormControl.classList.remove('error');
-                selectFormControl.classList.remove('error');
-            } else {
+            if (inputFormControl.value === "" && selectFormControl.value === "") {
                 e.preventDefault();
                 inputFormControl.classList.add('error');
                 selectFormControl.classList.add('error');
+            } else if (inputFormControl.value !== "" && selectFormControl.value === "") {
+                e.preventDefault();
+                inputFormControl.classList.remove('error');
+                selectFormControl.classList.add('error');
+            } else if (inputFormControl.value === "" && selectFormControl.value !== "") {
+                e.preventDefault();
+                inputFormControl.classList.add('error');
+                selectFormControl.classList.remove('error');
+            } else {
+                inputFormControl.classList.remove('error');
+                selectFormControl.classList.remove('error');
             }
         });
     </script>
