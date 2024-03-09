@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/advJSHW4/style.css">
+    <style>
+        .visible_button {
+            visibility: visible;
+        }
+        
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input id="from" type="text"> В инпуте написано: <span></span>
+
+    <br>
+
+    <button class="messageBtn">Показать блок</button>
+    <div class="message">
+        Привет :)
+    </div>
+
+    <br>
+
+    <form>
+        <label>
+        Первый инпут:
+        <input class="form-control" type="text">
+      </label>
+        <br>
+        <br>
+        <label>
+        Второй инпут:
+        <select class="form-control">
+          <option value=""></option>
+          <option value="1">Один</option>
+          <option value="2">Два</option>
+        </select>
+      </label>
+        <br>
+        <br>
+        <button>Отправить</button>
+    </form>
+
+
+    <script>
+        // 1.
+        const inputToChange = document.querySelector('input');
+        const spanToChange = document.querySelector('span');
+        inputToChange.addEventListener('input', function(e) {
+            spanToChange.innerHTML = e.target.value;
+        });
+        // 2. 
+        const messageButtonElement = document.querySelector('.messageBtn');
+        messageButtonElement.classList.add('animate_animated', 'animate_fadeInLeftBig', 'visible_button');
+        // 3. 
+        const formToCheckElement = document.querySelector('form');
+        const inputFormControl = document.querySelector('input.form-control');
+        const selectFormControl = document.querySelector('select.form-control');
+        const buttonFormControl = formToCheckElement.querySelector('button');
+        buttonFormControl.addEventListener('click', function(e) {
+            if (inputFormControl.value !== "" && selectFormControl.value !== "") {
+                inputFormControl.classList.remove('error');
+                selectFormControl.classList.remove('error');
+            } else {
+                e.preventDefault();
+                inputFormControl.classList.add('error');
+                selectFormControl.classList.add('error');
+            }
+        });
+    </script>
+</body>
+
+</html>
