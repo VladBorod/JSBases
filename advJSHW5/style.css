@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 20px;
+    gap: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.person__element {
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.person__id {
+    color: red;
+}
+
+.person__name {
+    color: indigo;
+}
+
+.person__image {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+}
