@@ -18,5 +18,4 @@ parseData.forEach(element => {
     const quantity = newTemplate.querySelector('div.item__quantity > input');
     quantity.value = element.quantity;
     container.appendChild(newTemplate);
-    quantity.value = 10;
 });
