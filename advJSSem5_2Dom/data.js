@@ -26,11 +26,27 @@ const data = `
   },
   {
       "title": "Z-JACKET CO",
-      "price": "$500",
+      "price": "$50000",
       "color": "Blue",
       "size": "M",
       "quantity": "2",
       "img": "https://flomaster.top/uploads/posts/2023-10/1697594889_flomaster-top-p-krasivie-risunki-odezhdi-pinterest-12.jpg"
-  }
+  },
+  {
+    "title": "Z-JACKET CO",
+    "price": "$50000",
+    "color": "Blue",
+    "size": "M",
+    "quantity": "2",
+    "img": "https://flomaster.top/uploads/posts/2023-10/1697594889_flomaster-top-p-krasivie-risunki-odezhdi-pinterest-12.jpg"
+},
+{
+    "title": "Z-JACKET CO",
+    "price": "$50000",
+    "color": "Blue",
+    "size": "M",
+    "quantity": "2",
+    "img": "https://flomaster.top/uploads/posts/2023-10/1697594889_flomaster-top-p-krasivie-risunki-odezhdi-pinterest-12.jpg"
+}
 ]
 `;

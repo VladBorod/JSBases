@@ -19,3 +19,5 @@ parseData.forEach(element => {
     quantity.value = element.quantity;
     container.appendChild(newTemplate);
 });
+
+// напиши калькулятор

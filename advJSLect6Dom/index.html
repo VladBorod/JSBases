@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/advJSLect6Dom/style.css">
+</head>
+
+<body>
+    <!-- <div class="container">
+        <audio class="audio" controls src="123.mp3" preload="auto"></audio>
+    </div>
+    <script>
+        const audioEl = document.querySelector('.audio');
+
+        audioEl.addEventListener('play', function(e) {
+            console.log('You press audio!');
+        });
+        audioEl.addEventListener('pause', function(e) {
+            console.log('You pause audio!');
+        });
+    </script> -->
+    <div>
+        Current time: <span class="currentTime">0</span>
+    </div>
+    <div class="player">
+        <!-- <video src="/advJSLect6Dom/trololo-321.mp4"></video> -->
+        <video src="trololo-321.mp4" controls>
+            <track kind="captions" src="captions.vtt" srclang="en" label="English">
+          </video>
+        <input type="range" class="timing" value="0" step="0.001">
+    </div>
+
+    <i class="fas fa-play"></i>
+    <i class="fas fa-pause"></i>
+    <input type="range" class="volume" min="0" max="1" step="0.01">
+    <script>
+        const videoEl = document.querySelector('video');
+        const playBtnEl = document.querySelector('.fa-play');
+        const pauseBtnEl = document.querySelector('.fa-pause');
+        const volumeEl = document.querySelector('.volume');
+        const timingEl = document.querySelector('.timing');
+        const currentTimeEl = document.querySelector('.currentTime');
+        playBtnEl.addEventListener('click', () => {
+            videoEl.play();
+        });
+        pauseBtnEl.addEventListener('click', () => {
+            videoEl.pause();
+        });
+        videoEl.addEventListener('timeupdate', (e) => {
+            currentTimeEl.textContent = videoEl.currentTime;
+            timingEl.value = videoEl.currentTime / videoEl.duration * 100;
+        });
+        videoEl.addEventListener('input', function(e) {
+            videoEl.volume = volumeEl.value;
+        });
+        timingEl.addEventListener('input', function(e) {
+            videoEl.currentTime = timingEl.value / 100 * videoEl.duration;
+        });
+    </script>
+</body>
+
+</html>
