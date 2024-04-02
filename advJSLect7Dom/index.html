@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/advJSLect7Dom/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div draggable="true" class="box">A</div>
+        <div draggable="true" class="box">B</div>
+        <div draggable="true" class="box">C</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(e) {
+            let dragSrcEl = null;
+
+            function handleDrugStart(e) {
+                this.style.opacity = '0.4';
+
+                dragSrcEl = this;
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', this.innerHTML);
+            }
+
+            function handleDrugOver(e) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                e.dataTransfer.dropEffect = 'move';
+                return false;
+            }
+
+            function handleDrugEnter(e) {
+                this.classList.add('over');
+            }
+
+            function handleDrugLeave(e) {
+                this.classList.remove('over');
+            }
+
+            function handleDrop(e) {
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                }
+
+                if (dragSrcEl != this) {
+                    dragSrcEl.innerHTML = this.innerHTML;
+                    this.innerHTML = e.dataTransfer.getData('text/html');
+                }
+                return false;
+            }
+
+            function handleDrugEnd(e) {
+                this.style.opacity = '1';
+
+                items.forEach(function(item) {
+                    item.classList.remove('over');
+                })
+            }
+
+            let items = document.querySelectorAll('.box');
+            items.forEach(function(item) {
+                item.addEventListener('dragstart', handleDrugStart);
+                item.addEventListener('dragenter', handleDrugEnter);
+                item.addEventListener('dragover', handleDrugOver);
+                item.addEventListener('dragleave', handleDrugLeave);
+                item.addEventListener('drop', handleDrop);
+                item.addEventListener('dragend', handleDrugEnd);
+            });
+        });
+    </script>
+
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus similique quidem obcaecati sint, cumque ad inventore illo provident pariatur doloribus aliquid esse odit nulla, optio autem nisi fugiat ex laudantium nostrum. Eum odio, cum et exercitationem
+        molestias repellat ratione at quam a corporis assumenda ipsam dolor recusandae nemo omnis pariatur cumque accusantium ab cupiditate voluptatibus earum iusto veniam dolores! Sunt consectetur architecto temporibus. Quaerat sit perferendis consectetur,
+        impedit eligendi in ad unde officia earum exercitationem illo incidunt maiores aperiam, dolore ratione iste ullam rerum dicta omnis asperiores laudantium eius nisi. Molestiae nulla, eaque laudantium veniam error esse. Explicabo sunt culpa consectetur
+        architecto tempora dicta. Iusto, labore natus at nihil omnis eum aliquam doloremque, doloribus maiores ut, eveniet id. Ipsum assumenda, totam autem quisquam voluptas dolorem numquam nemo eaque aperiam voluptatibus impedit. Maiores dolorem nihil
+        possimus numquam! Repellat consequatur accusamus, eos modi harum tenetur. Iusto fugit delectus vero eligendi laudantium quam velit quis odit quae architecto, pariatur obcaecati suscipit sed eum aperiam magni dolorum incidunt numquam temporibus
+        natus dicta ratione sunt! Quae voluptatum exercitationem, nemo maiores quisquam suscipit ut id est, dolore laborum alias error illo. Quaerat neque, repellendus debitis hic facere obcaecati reprehenderit dicta nisi corporis est? Non fugiat voluptate
+        adipisci doloribus magnam officiis quas suscipit magni, eius voluptatum modi corporis earum dignissimos labore eligendi? Consectetur consequuntur quas cumque accusantium nulla? Rem suscipit expedita deleniti accusantium quas nobis quae nihil culpa
+        fuga repellat. Fugiat quasi exercitationem alias non eaque assumenda architecto culpa ratione ipsa iste molestiae doloribus, soluta, iusto dolorem deserunt accusantium cumque cupiditate quaerat illum ipsum. Doloremque, doloribus porro delectus
+        cupiditate consequatur est distinctio sequi nam quas odit autem ipsam ipsum culpa asperiores fugiat ducimus rem. Blanditiis aperiam necessitatibus delectus nobis odio praesentium dolor accusamus quidem recusandae. Repellat aspernatur iusto enim
+        accusantium adipisci illum? Libero nulla deserunt sapiente illum voluptatibus culpa quisquam, amet itaque tempore soluta accusamus asperiores vitae! Laborum iure eius ea a quia vitae repellat illo temporibus recusandae ipsam unde eligendi pariatur,
+        iste maxime aliquid voluptas atque! Debitis, laudantium consequuntur ipsa aliquam impedit minus eligendi velit vitae laborum. Dignissimos soluta expedita ipsa fugit. Laboriosam ducimus facere at in corrupti voluptates fugiat enim consectetur,
+        ut perspiciatis, doloremque tempora exercitationem ex nemo ab corporis sit quis placeat voluptatibus similique quisquam. Tempore non ex aspernatur provident quo saepe inventore enim nesciunt maiores quis ea quasi veritatis quos laudantium ipsum
+        labore magni, quam numquam consequuntur cumque optio. Error blanditiis commodi dolore dignissimos, delectus odio earum fugit placeat autem porro ut ducimus, aliquam expedita rerum. Eos, ad assumenda! Beatae eaque impedit quae laboriosam nulla
+        iste. Animi, aliquid veniam. Magnam quidem perspiciatis omnis enim voluptatum maiores officiis delectus asperiores laboriosam? Dolorum fugiat odit delectus non sint incidunt, ipsam eveniet id natus minus sit doloribus culpa voluptas numquam molestias
+        nihil vel eaque consequatur nisi possimus dolorem ducimus nesciunt officia quod! Blanditiis illo quo tempore perspiciatis ipsa quibusdam veritatis aliquam autem aut, amet qui laborum praesentium et velit voluptate quasi esse sed libero quia suscipit.
+        Excepturi necessitatibus minus magni enim temporibus fugit. Quasi quam culpa optio unde dolorem veritatis reiciendis voluptates ex quas quia veniam perferendis numquam voluptatum impedit architecto soluta amet, natus ipsam tenetur accusamus aliquid,
+        itaque deleniti. Voluptatem facilis tenetur facere repudiandae porro sapiente veritatis aut veniam et similique dolorem laudantium repellendus, libero mollitia magni exercitationem itaque ad labore ducimus inventore eaque incidunt commodi culpa
+        autem. Fugit ut alias adipisci deleniti ratione error, suscipit accusamus, voluptatibus dolores rem facilis sunt assumenda? Nulla corporis molestias harum libero nobis dignissimos distinctio eum expedita, voluptatibus sequi error dolores deleniti
+        suscipit pariatur nemo optio facere! Perferendis laborum, vitae omnis voluptate, eligendi nulla corrupti quia sit repellendus eaque placeat et libero temporibus tenetur totam nisi quasi distinctio optio eius amet enim eos. Consectetur quis autem
+        tenetur illo assumenda molestias eveniet, ab asperiores pariatur accusamus veritatis deleniti quisquam neque mollitia quo blanditiis perferendis provident dignissimos quidem in doloremque, perspiciatis a. Praesentium similique voluptatibus eligendi
+        aspernatur sint tenetur illum autem placeat architecto quae nisi, vero atque reiciendis et voluptate at, quaerat quasi facere numquam provident consectetur odio. Commodi accusamus corrupti reiciendis animi eveniet doloremque enim ab harum unde
+        saepe perspiciatis, exercitationem nesciunt a, dolorum minima quam. Maxime error quae aliquam voluptatem sunt expedita provident. Iure exercitationem quos dolorum vel soluta tempore quae culpa. Impedit vitae sunt laborum, dolores natus pariatur
+        tempora iusto fuga excepturi odit sequi quis aut voluptatum possimus consequuntur commodi animi ab aliquam optio ducimus. Temporibus, ipsum, exercitationem aut molestiae, fugit illo eius repudiandae quaerat consequatur aspernatur amet sunt error
+        adipisci. Nihil unde libero, sunt optio impedit suscipit dolorem esse accusantium eos, ad voluptate culpa! Necessitatibus vitae deserunt aspernatur praesentium natus ducimus aperiam eveniet, dolores, voluptates dignissimos temporibus. Provident
+        nisi quos ipsam corporis sunt! Dignissimos nemo nam sit porro non modi quod nesciunt placeat. Corporis minus eaque dicta dolorem numquam unde nulla ea et expedita, quae nesciunt ad quos perferendis. Non corporis blanditiis minus nesciunt ad eius
+        possimus voluptatem, reiciendis quos consequatur inventore? Corporis dolore tempore omnis, ad delectus eveniet nisi incidunt. Optio quidem placeat, voluptatem expedita maiores illo mollitia veniam laborum doloribus, corrupti officia, recusandae
+        illum officiis provident consectetur numquam? Perferendis illum totam necessitatibus? Harum impedit ea dignissimos quasi esse! Velit maiores mollitia sunt nam, accusamus exercitationem fuga, commodi eligendi numquam est, provident omnis laboriosam
+        quam inventore perferendis quod cumque laborum sapiente dolorum deleniti voluptatibus illo. Ad quasi, animi ea error neque nobis deserunt voluptate nemo suscipit possimus excepturi, repellat laborum ut consequuntur. Animi eveniet totam laborum
+        hic perferendis incidunt esse qui sint odio! Delectus autem nostrum deserunt enim eos at ipsum culpa! Nesciunt, ipsum? Laborum aliquid dignissimos aliquam vel quae perferendis vero molestias voluptatem necessitatibus repellendus, porro assumenda
+        quaerat delectus cumque, nisi distinctio harum ipsam architecto laboriosam in et unde neque. Quis, fugit! Fugiat suscipit consequatur excepturi quisquam totam doloremque odio porro expedita aperiam iure ratione maiores veritatis harum repellendus
+        corrupti culpa voluptatibus libero inventore illo, saepe rem officia! Inventore at ipsum impedit tempore, repellat officia temporibus cum, voluptatibus nulla ducimus voluptatum? Recusandae eaque repellendus maiores nemo veniam totam eveniet voluptates
+        qui, ducimus provident repudiandae quae.</p>
+    <script>
+        const pEl = document.querySelector('p');
+        console.log(document.documentElement.scrollHeight);
+        console.log(document.documentElement.clientHeight);
+        console.log(document.documentElement.scrollTop);
+        console.log(window.pageYOffset);
+        document.addEventListener('scroll', function(e) {
+            console.log(document.documentElement.scrollTop);
+        });
+    </script>
+    <script src="/advJSLect7Dom/script.js">
+    </script> -->
+</body>
+
+</html>
