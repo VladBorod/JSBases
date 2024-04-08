@@ -16,11 +16,14 @@ class Order{
     }
 
     showProducts = () => {
+        console.log('-------------------');
+        if (this.products.length < 1){
+            throw new Error('You must provide at least one product!');
+        }
         console.log(this.orderNumber);
         this.products.forEach(element => {
-            console.log('////////////////////////////////');
-            console.log(element.getProductName());
-            console.log(element.getPrice());
+            console.log(`Product: ${element.getProductName()}`);
+            console.log(`Price: ${element.getPrice()}`);
         });
         console.log(`Total price: ${this.getTotalPrice()}`);
     }
@@ -48,11 +51,14 @@ const product4 = new Product('RedMe', 30000);
 
 const order1 = new Order();
 const order2 = new Order();
+const order3 = new Order();
 
 order1.addProduct(product1);
 order1.addProduct(product2);
 order1.showProducts();
-console.log('-----------------------------');
+
 order2.addProduct(product3);
 order2.addProduct(product4);
 order2.showProducts();
+
+order3.showProducts();
