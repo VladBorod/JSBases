@@ -1,0 +1,10 @@
+.person__invisible{
+  display: none;
+  text-visibility: hidden;
+}
+
+.dog-image{
+  max-width: 240px;
+  max-height: 240px;
+  object-fit: cover;
+}

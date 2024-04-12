@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/4ECMAS_Sem/style.css"> -->
+</head>
+
+<body>
+    <h1 class="toDo">To Do</h1>
+    <input type="text" id="task_input">
+    <button onclick="addTask()">Add Task</button>
+    <ul></ul>
+    <!-- <script src="/4ECMAS_Sem/localStorage.js" type="module"></script> -->
+    <script>
+        const inputElement = document.querySelector('#task_input');
+        const ulElement = document.querySelector('ul');
+
+        const savedTask = JSON.parse(localStorage.getItem('task')) || [];
+        savedTask.forEach(task => {
+            const liElement = document.createElement('li');
+            liElement.textContent = task;
+            ulElement.appendChild(liElement);
+        });
+
+        const addTask = () => {
+            const text = inputElement.value;
+            const liElement = document.createElement('li');
+            liElement.textContent = text;
+            ulElement.appendChild(liElement);
+            savedTask.push(text);
+            localStorage.setItem('task', JSON.stringify(savedTask)); 
+            inputElement.value = '';  
+        };
+
+
+    </script>
+</body>
+
+</html>
