@@ -1,0 +1,12 @@
+{
+  "name": "trash_hard_password_generator",
+  "version": "1.0.0",
+  "description": "This project contains only function for hard password generation.",
+  "main": "passGen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["hard password generation", "password generation", "password"],
+  "author": "VladBorod",
+  "license": "ISC"
+}

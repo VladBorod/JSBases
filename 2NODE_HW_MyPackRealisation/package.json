@@ -1,0 +1,15 @@
+{
+  "name": "2node_hw_mypackrealisation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "trash_hard_password_generator": "^1.0.0"
+  }
+}
