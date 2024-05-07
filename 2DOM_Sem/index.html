@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/2DOM_Sem/style.css">
+</head>
+<body>
+  <div class="container"> 
+
+  </div>
+  <nav>
+    <ul class="menu" id="menu">
+      <li><a class="menu__link" href="#">Main</a></li>
+      <li><a class="menu__link" href="#">About</a></li>
+      <li><a class="menu__link" href="#">Services</a></li>
+      <li><a class="menu__link" href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="modwin">
+
+  </div>
+
+  <button id="openModalBtn">Open modal window</button>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Modal window</h2>
+      <p>Press close to close this window</p>
+      <button id="closeModalBtn">Close</button>
+    </div>
+  </div>
+
+  <div class="seller">
+
+  </div>
+
+  <div class="q_body">
+    <div class="question">
+      <p>What color do you like?</p>
+      <div class="options">
+        <label>
+          <input type="radio" name="q1" value="Blue"> Blue
+        </label>
+        <label>
+          <input type="radio" name="q1" value="Green"> Green
+        </label>
+        <label>
+          <input type="radio" name="q1" value="Red"> Red
+        </label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>What animal do you like?</p>
+      <div class="options">
+        <label>
+          <input type="radio" name="q2" value="Dog"> Dog
+        </label>
+        <label>
+          <input type="radio" name="q2" value="Cat"> Cat
+        </label>
+        <label>
+          <input type="radio" name="q2" value="Bird"> Bird
+        </label>
+      </div>
+    </div>
+
+    <button id="submit">End quiz</button>
+
+    <div class="result" style="display: none;">
+      <h2>Result:</h2>
+      <p id="result-q1">Answer 1: <span></span></p>
+      <p id="result-q2">Answer 2: <span></span></p>
+    </div>
+
+  </div>
+
+  <script src="/2DOM_Sem/script.js"></script>
+</body>
+</html>

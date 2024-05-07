@@ -1,0 +1,38 @@
+/* .content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
+  min-height: 500px;
+  transition: all 0.3s ease;
+} */
+
+/* .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader .fa-spinnert{
+  font-size: 48px;
+  color: chocolate;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+} */
