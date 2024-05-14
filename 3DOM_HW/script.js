@@ -4,7 +4,7 @@ let page = 1;
 
 async function fetchPhotos() {
   try {
-    const response = await fetch(`https://api.unsplash.com/photos/random/?page=${page}&per_page=9&client_id=b2LuDxiLgT_jWn3xxLR5yfOR7OrhEGmggyC33rw5b3o`);
+    const response = await fetch(`https://api.unsplash.com/photos/random/?page=${page}&per_page=9&client_id=KEY`);
     const photos = await response.json();
     return photos;
   } catch (error) {
