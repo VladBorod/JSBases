@@ -1,0 +1,14 @@
+.products{
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  width: 200px;
+  height: 100px;
+}
+
+.send-btn {
+  width: 50px;
+  height: 20px;
+}
